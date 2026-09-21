@@ -3,8 +3,10 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Avikalp Gupta | Entrepreneur, AI Specialist & Tech Generalist</title>
+	<title>Tapish Rathore | AI Systems Engineer</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description"
+		content="AI systems engineer in Mumbai. I build agent runtimes that run real operations, and the evaluation tooling that proves whether they actually work.">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 	<link rel="shortcut icon" href="/images/favicon.ico">
 	<link rel="stylesheet" href="layout.css" />
@@ -16,28 +18,28 @@
 <body>
 	<nav>
 		<a class="logo" href="/">
-			<img src="/images/favicon.ico" alt="Avikalp Gupta Logo">
-			Avikalp Gupta
+			<span class="monogram">TR</span>
+			Tapish Rathore
 		</a>
 		<div class="hamburger-menu" onclick="toggleMenu()">
 			<i class="fas fa-bars"></i>
 		</div>
 		<div class="nav-menu">
 			<a href="/projects/" class="nav-btn">Projects</a>
-			<a href="/blog" class="nav-btn">Blog</a>
+			<a href="/blog" class="nav-btn">Writing</a>
 			<button class="say-hello-btn" onclick="openContactModal()">Say Hello</button>
 		</div>
 	</nav>
 
 	<section class="hero">
 		<iframe
-			src="https://gitskyline.vercel.app/avikalpg/embed?color=%235a67d8&enableZoom=false&base=true&enablePan=false&enableDamping=false&scale=0.5"
+			src="https://gitskyline.vercel.app/tapishr/embed?color=%230f766e&enableZoom=false&base=true&enablePan=false&enableDamping=false&scale=0.5"
 			width="100%" height="100%" frameborder="0" class="hero-background"></iframe>
 		<div class="hero-content">
-			<h1 class="hero-title">Entrepreneur, AI Specialist & Tech Generalist</h1>
+			<h1 class="hero-title">AI Systems Engineer</h1>
 			<p class="hero-subtitle">
-				I design and build innovative products that make a difference,
-				with a focus on productivity and software development.
+				I build agent runtimes that run real operations — and the evaluation tooling
+				that proves whether they actually work.
 			</p>
 		</div>
 		<button class="scroll-indicator" onclick="scrollToNextSection()">
@@ -45,115 +47,87 @@
 		</button>
 	</section>
 
-	<section id="top-companies" class="pedigree-logos">
-		<div class="logos-container">
-			<img src="/images/logos/Goldman_Sachs_long.png" alt="Goldman Sachs">
-			<img src="/images/logos/Microsoft_Research_long.png" alt="Microsoft Research">
-			<img src="/images/logos/Puma-Logo.png" alt="Puma">
-			<img src="/images/logos/20th-century-fox.png" alt="20th Century Fox">
-		</div>
-		<div class="logos-container">
-			<img src="/images/logos/foxconn-logo.png" alt="Foxconn">
-			<img src="/images/logos/siemens-energy.png" alt="Siemens Energy">
-			<img src="/images/logos/AstraZeneca_logo.png" alt="AstraZeneca">
-			<img src="/images/logos/myntra-logo.png" alt="Myntra">
-		</div>
-		<h3>Some Companies I've Worked With</h3>
-	</section>
-
 	<section class="about-me">
 		<div class="about-container">
 			<div class="about-image">
 				<div class="profile-container">
-					<img src="/images/profile.png" alt="Avikalp Gupta" class="profile-photo">
-					<div class="rotating-logos">
-						<div class="logo-item" style="--i:4"><img src="/images/logos/vibinex.png" alt="Vibinex"></div>
-						<div class="logo-item" style="--i:5"><img src="/images/logos/informed.png" alt="InforMED"></div>
-						<div class="logo-item" style="--i:0"><img src="/images/logos/alokit.png" alt="Alokit"></div>
-					</div>
-				</div>
-				<div class="tag-selector">
-					<div class="tag-ring">
-						<button class="tag-btn active" data-tag="all">All</button>
-						<button class="tag-btn" data-tag="exp">Experience</button>
-						<button class="tag-btn" data-tag="member">Member</button>
-						<button class="tag-btn" data-tag="alumnus">Alumni</button>
-						<button class="tag-btn" data-tag="proj">Open Source Projects</button>
-						<button class="tag-btn" data-tag="startup">Startups</button>
-					</div>
+					<div class="profile-photo monogram-lg">TR</div>
 				</div>
 			</div>
 			<div class="about-content">
-				<h2>Hi, I'm Avikalp.</h2>
-				<p>For over 10 years, I've been building commercial software powered by AI and Machine Learning. I
-					combine my entrepreneurial mindset with technical expertise to build products that solve real-world
-					problems.</p>
-				<p style="margin-top: 10px">My journey involves primary research, contributing to open-source projects,
-					mentoring tech teams, and founding startups. I'm passionate about using technology to help people
-					<span class="emph">do and achieve more in their lives</span>.
-					So my projects are generally in the category of productivity, innovation or social impact.
+				<h2>Hi, I'm Tapish.</h2>
+				<p>For eleven years I've built production software — distributed data infrastructure at
+					<span class="emph">Amazon Web Services</span>, 10TB/day pipelines at a real-money gaming
+					company, and a developer-tools startup I co-founded and led as CTO.
+				</p>
+				<p style="margin-top: 10px">Today I build <span class="emph">Kavi</span>, a multi-tenant AI agent
+					runtime that runs a company's content, ads and research operations — 230 typed capabilities and
+					22 durable workflows, with tenants isolated by a database-level wall rather than by convention.
+				</p>
+				<p style="margin-top: 10px">The thread running through it: <span class="emph">I care whether the
+						measurement is real.</span> Most of what gets reported as an AI improvement is noise that
+					nobody put error bars on. I write tools that tell the difference.
 				</p>
 			</div>
 		</div>
 	</section>
 
-	<section id="education" class="pedigree-logos" style="background-color: white;">
-		<div class="logos-container">
-			<img src="/images/logos/Stanford_University_long.png" alt="Stanford" title="Stanford University">
-			<img src="/images/logos/IIT_Kanpur_long.png" alt="IIT Kanpur" title="Indian Institute of Technology Kanpur">
-			<div class="logo-badge-container">
-				<img src="/images/logos/Cambridge-Judge-Business-School.png" alt="CJBS"
-					title="Cambridge Judge Business School">
-				<img src="/images/logos/upGrad-logo.png" alt="Upgrad" title="Online through Upgrad" class="badge">
-			</div>
+	<section id="experience" class="pedigree-text">
+		<h3>Where I've worked</h3>
+		<div class="pedigree-list">
+			<span>Khiladi Pro</span><span>Vibinex</span><span>Megashots (GetMega)</span>
+			<span>Amazon Web Services</span><span>Netskope / Sift Security</span><span>Nebulaa Innovations</span>
 		</div>
-		<h3>Education</h3>
 	</section>
 
 	<section class="showcase-project">
 		<div class="showcase-body">
 			<div class="showcase-hero">
-				<subtitle>FEATURED PROJECT</subtitle>
-				<h1>Vibinex</h1>
-				<h2>The most intuitive UI for Code Reviews</h2>
-				<p>Streamline your development process with our cutting-edge code review platform
+				<subtitle>FEATURED WORK</subtitle>
+				<h1>evalstats</h1>
+				<h2>The #1 spot on SWE-bench is a coin flip</h2>
+				<p>The two best coding agents on SWE-bench Verified are tied at 79.2%. They disagree on 36 tasks
+					and split them 18–18. That is not a ranking — that is a coin landing heads 18 times out of 36.
 				</p>
 				<div class="showcase-features">
 					<div class="feature-grid">
 						<div class="feature-card">
-							<i class="fas fa-user-check"></i>
-							<p>Accurate Reviewer Assignment</p>
+							<i class="fas fa-chart-line"></i>
+							<p>97% of adjacent leaderboard pairs are statistically indistinguishable</p>
 						</div>
 						<div class="feature-card">
-							<i class="fas fa-code-branch"></i>
-							<p>DiffGraph: Visualize Code Changes</p>
+							<i class="fas fa-ruler-horizontal"></i>
+							<p>The benchmark cannot resolve anything under 5.4 points</p>
 						</div>
 						<div class="feature-card">
-							<i class="fas fa-file-code"></i>
-							<p>Personalized File & Line Highlighting</p>
+							<i class="fas fa-code"></i>
+							<p>Wilson intervals, exact McNemar, minimal detectable difference</p>
 						</div>
 						<div class="feature-card">
-							<i class="fas fa-list-ol"></i>
-							<p>Pull Request Prioritization</p>
+							<i class="fas fa-redo"></i>
+							<p>Zero compute — reproducible from data already published</p>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="showcase-demo">
-				<a href="https://www.youtube.com/watch?v=IdCfbRLiFCQ" target="_blank"><img
-						src="./images/DiffGraph-Demo-mini.gif" alt="DiffGraph Demo"></a>
+				<a href="https://tapishr.github.io/evalstats/widget/" target="_blank" class="widget-card">
+					<i class="fas fa-sliders-h"></i>
+					<strong>Try the interactive widget</strong>
+					<span>Pick any two SWE-bench submissions and watch the gap dissolve.</span>
+				</a>
 			</div>
 		</div>
 		<div class="showcase-call-to-action">
-			<a href="https://vibinex.com" target="_blank">Learn More</a>
-			<a href="https://vibinex.com/demo" target="_blank">Watch Demo</a>
+			<a href="https://github.com/tapishr/evalstats/blob/main/ESSAY.md" target="_blank">Read the essay</a>
+			<a href="https://github.com/tapishr/evalstats" target="_blank">View the code</a>
 		</div>
 	</section>
 
 	<section class="featured-projects">
 		<h2>My Projects</h2>
 		<div class="projects-grid">
-			<!-- This will be populated by JavaScript -->
+			<!-- populated by projects/data.js via index.js -->
 		</div>
 		<div class="view-all-projects">
 			<a href="/projects/" class="view-all-btn">
@@ -163,62 +137,17 @@
 		</div>
 	</section>
 
-	<section id="startup-programs" class="pedigree-logos">
-		<div class="logos-container">
-			<img src="/images/logos/ODF_long.png" alt="ODF" title="On Deck Founders">
-			<img src="/images/logos/FirstChequeVC.webp" alt="FirstChequeVC" title="First Cheque VC">
-			<img src="/images/logos/IIT-Startups.png" alt="IIT Startups" title="IIT Startups">
-			<img src="/images/logos/Young_Sustainable_Impact.png" alt="YSI Global" title="Young Sustainable Impact">
-		</div>
-		<h3>Startup Programs</h3>
-	</section>
-
-	<section class="sponsor-section">
-		<div class="container">
-			<h2>Support My Open Source Work</h2>
-			<div class="sponsor-content">
-				<div class="sponsor-main">
-					<iframe src="https://github.com/sponsors/avikalpg/card" title="Sponsor avikalpg" height="225"
-						width="600" frameborder="0">
-					</iframe>
-				</div>
-			</div>
-			<div class="open-source-carousel">
-				<div class="carousel-container">
-					<div class="carousel-track">
-						<div class="carousel-slide">
-							<a href="https://github.com/avikalpg/typing-analyst" target="_blank">
-								<img src="https://github-readme-stats.vercel.app/api/pin/?username=avikalpg&repo=typing-analyst"
-									alt="Typing Analyst">
-							</a>
-						</div>
-						<div class="carousel-slide">
-							<a href="https://github.com/avikalpg/skyline" target="_blank">
-								<img src="https://github-readme-stats.vercel.app/api/pin/?username=avikalpg&repo=skyline"
-									alt="Skyline">
-							</a>
-						</div>
-						<div class="carousel-slide">
-							<a href="https://github.com/avikalpg/free-time" target="_blank">
-								<img src="https://github-readme-stats.vercel.app/api/pin/?username=avikalpg&repo=free-time"
-									alt="Free Time">
-							</a>
-						</div>
-						<div class="carousel-slide">
-							<a href="https://github.com/vibinex/vibinex" target="_blank">
-								<img src="https://github-readme-stats.vercel.app/api/pin/?username=vibinex&repo=vibinex"
-									alt="Vibinex">
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
+	<section id="education" class="pedigree-text alt">
+		<h3>Education</h3>
+		<div class="pedigree-list">
+			<span>M.S. EECS &middot; University of California, Merced</span>
+			<span>B.Tech CSE &middot; IIT Jodhpur</span>
 		</div>
 	</section>
 
 	<section class="cta-section">
 		<h2>Interested in Collaborating?</h2>
-		<p>I'm always open to discussing innovative projects and opportunities.</p>
+		<p>I'm open to work on AI evaluation, agent infrastructure, and hard measurement problems.</p>
 		<button class="say-hello-btn" onclick="openContactModal()">
 			<i class="far fa-comments" style="margin-right: 5px;"></i>Start a Conversation
 		</button>
@@ -228,7 +157,10 @@
 		<div class="contact-form-container">
 			<span class="close-icon" onclick="closeContactModal()">&times;</span>
 			<h2>Get in Touch</h2>
-			<form class="contact-form" action="mailto:avikalpgupta@gmail.com" method="post" enctype="text/plain">
+			<p class="contact-direct">The fastest route is email:
+				<a href="mailto:tapish303@gmail.com">tapish303@gmail.com</a>
+			</p>
+			<form class="contact-form" action="mailto:tapish303@gmail.com" method="post" enctype="text/plain">
 				<input type="text" name="name" placeholder="Your Name" required>
 				<input type="email" name="email" placeholder="Your Email" required>
 				<textarea name="message" placeholder="Your Message" rows="5" required></textarea>
@@ -239,26 +171,18 @@
 
 	<footer class="footer">
 		<div class="footer-logo">
-			<img src="/images/favicon.ico" alt="Avikalp Gupta Logo"><br />
-			Avikalp Gupta
+			<span class="monogram">TR</span><br />
+			Tapish Rathore
 		</div>
-		<p>Innovating at the intersection of technology and social impact</p>
+		<p>Mumbai, India &middot; building and measuring AI systems</p>
 		<div class="footer-social">
-			<a href="https://twitter.com/AvikalpGupta"><i class="fab fa-twitter"></i></a>
-			<a href="https://github.com/avikalpg"><i class="fab fa-github"></i></a>
-			<a href="https://www.linkedin.com/in/avikalp-gupta"><i class="fab fa-linkedin"></i></a>
-			<a href="https://avikalpgupta.medium.com/"><i class="fab fa-medium"></i></a>
-			<a href="https://defcon.social/@avikalp"><i class="fab fa-mastodon"></i></a>
+			<a href="https://github.com/tapishr" aria-label="GitHub"><i class="fab fa-github"></i></a>
+			<a href="https://www.linkedin.com/in/tapishr" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+			<a href="mailto:tapish303@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
 		</div>
-		<a href="/archive" class="archive"><i class="fas fa-archive"></i>archive</a>
-		<!-- On 26th Feb 2025, when I added the counter, I had 349 views according to Google Analytics -->
-		<div class="counterapi views-count" ns="avikalpg.github.io" action="view" key="home" startNumber="349"
-			unique="true" label="visitors" noCSS="true" noAnim="true"></div>
 	</footer>
 
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-QPXD79N14E"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<script src="https://counterapi.com/c.js" async></script>
 	<script src="index.js"></script>
 </body>
 

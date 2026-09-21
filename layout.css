@@ -1,10 +1,10 @@
 :root {
-	--primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	--primary-gradient: linear-gradient(135deg, #0f766e 0%, #155e75 100%);
 	--secondary-background: #f4f5f7;
 	--text-color: #333;
 	--subtext-color: #666;
-	--accent-color: #5a67d8;
-	--light-accent: #e6e9f0;
+	--accent-color: #0f766e;
+	--light-accent: #d7eae7;
 }
 
 * {

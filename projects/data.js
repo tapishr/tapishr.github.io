@@ -1,200 +1,103 @@
 const projectsData = {
 	categories: [
+		{ id: "ai-eval", name: "AI Evaluation & Measurement" },
 		{ id: "ai-ml", name: "AI & Machine Learning" },
 		{ id: "dev-tools", name: "Developer Tools" },
-		{ id: "startups", name: "Startups" },
-		{ id: "social", name: "Social Impact" },
-		{ id: "games", name: "Games & Sims" }
+		{ id: "infra", name: "Data & Infrastructure" },
+		{ id: "startups", name: "Startups" }
 	],
 	projects: [
 		{
+			title: "evalstats",
+			shortDescription: "Statistical honesty for AI agent evaluations.",
+			fullDescription: "Agent benchmarks are expensive, low-N and high-variance, and most published improvements ship without error bars. evalstats provides the machinery those reports skip: Wilson confidence intervals, the exact McNemar test and paired-difference intervals for comparing two systems on the same task set, and power analysis for minimal detectable difference. The headline result, reproducible with zero compute from data submissions already publish: at N=500 on SWE-bench Verified, differences under roughly 4-6 points are statistically indistinguishable — so 97% of adjacent leaderboard pairs are noise.",
+			techStack: ["Python", "Statistics", "McNemar", "Power Analysis"],
+			categories: ["ai-eval", "ai-ml"],
+			links: [
+				{ text: "Read the essay", url: "https://github.com/tapishr/evalstats/blob/main/ESSAY.md" },
+				{ text: "Interactive widget", url: "https://tapishr.github.io/evalstats/widget/" },
+				{ text: "Source", url: "https://github.com/tapishr/evalstats" }
+			],
+			featured: true
+		},
+		{
+			title: "novelty-drift",
+			shortDescription: "Does the optimal-novelty point move as an audience learns a genre?",
+			fullDescription: "A feasibility probe with its decision rule pre-committed in writing before the real-data run, so the verdict could not be rationalised afterwards. The instrument fires on injected drift, stays silent on a stationary null, and — critically — stays silent on a scale-inflation artefact that fools the naive measure. Validated on 515k Million Song Dataset tracks with 90-dimensional timbre vectors and 114k Spotify tracks. It has already produced one methodological finding: relative, scale-free novelty is load-bearing; raw distance is not trustworthy across time.",
+			techStack: ["Python", "NumPy", "Bootstrap CIs", "Pre-registration"],
+			categories: ["ai-eval", "ai-ml"],
+			links: [
+				{ text: "Source", url: "https://github.com/tapishr/novelty-drift" },
+				{ text: "The probe protocol", url: "https://github.com/tapishr/novelty-drift/blob/main/PROBE.md" }
+			],
+			featured: true
+		},
+		{
+			title: "Kavi",
+			shortDescription: "A multi-tenant AI agent runtime running a company's operations.",
+			fullDescription: "230 typed capabilities and 22 durable Temporal workflows, with business units isolated by a Postgres row-level-security wall rather than by application convention. Includes a server-side approval firewall built after a red-team finding: irreversible actions cannot execute unless the run's own message history proves a human approved them — bound to the specific verb and single-use, so it survives prompt injection and replay. Deploys are gated by a self-evaluation harness with held-in, held-out, sealed and canary task sets.",
+			techStack: ["Python", "Temporal", "Modal", "Postgres RLS", "LLM agents"],
+			categories: ["ai-ml", "infra"],
+			links: [],
+			featured: true
+		},
+		{
 			title: "Vibinex",
-			shortDescription: "The most intuitive UI to understand code changes. ",
-			fullDescription: "Through a combination of a GitHub App and a browser extension, Vibinex visualizes the changes as a graph and adds necessary context on the review interface. It helps developers navigate and comprehend codebases more efficiently.",
-			techStack: ["JavaScript", "Chrome Extensions API", "Natural Language Processing"],
-			categories: ["dev-tools", "startups", "ai-ml"],
+			shortDescription: "Privacy-first code review, built as CTO and co-founder.",
+			fullDescription: "A developer-tools startup I co-founded and led as CTO for three years. Vibinex visualises code changes as a graph and adds reviewer context directly in the GitHub and Bitbucket review interface. I wrote most of the Rust data-processing engine — 575 of its commits — on a dual-backend architecture where sensitive customer code stays on-prem while encrypted metadata reaches cloud APIs.",
+			techStack: ["Rust", "TypeScript", "Next.js", "Chrome Extension", "Docker"],
+			categories: ["dev-tools", "startups"],
 			links: [
-				{
-					text: "Visit Website",
-					url: "https://vibinex.com"
-				},
-				{
-					text: "Install Extension",
-					url: "https://chromewebstore.google.com/detail/vibinex-code-review/jafgelpkkkopeaefadkdjcmnicgpcncc"
-				}
+				{ text: "Website", url: "https://vibinex.com" },
+				{ text: "vibi-dpu (Rust engine)", url: "https://github.com/vibinex/vibi-dpu" },
+				{ text: "DiffGraph generator", url: "https://github.com/vibinex/diff-graph-generator" }
 			],
 			featured: true
 		},
 		{
-			title: "#PUMADive AI Engine",
-			shortDescription: "Built the core AI model for PUMA's viral marketing campaign.",
-			fullDescription: "As a part of KhiladiPro's team, developed the AI engine that analyzed user-submitted photos to detect and score their resemblance to PUMA's iconic logo leap, powering a viral marketing campaign that engaged millions of sports fans.",
-			image: "path/to/puma-dive-image.jpg",
-			techStack: ["Computer Vision", "Deep Learning", "Python", "Hugging Face"],
+			title: "Generative media fleet",
+			shortDescription: "Eight self-hosted GPU apps replacing per-clip video APIs.",
+			fullDescription: "A self-hosted generative-media fleet across 8 Modal GPU apps (WAN 2.2, LTX-2, Flux, SDXL, Whisper, vLLM), replacing third-party video APIs that cost $1.20-4.00 per clip in a Meta ads pipeline. Owning the rollout meant owning capacity, cost and failure handling — not just the model choice.",
+			techStack: ["Modal", "PyTorch", "vLLM", "Diffusion models"],
+			categories: ["ai-ml", "infra"],
+			links: [],
+			featured: false
+		},
+		{
+			title: "Video-to-3D character pipeline",
+			shortDescription: "Monocular motion capture to rendered 3D, as one durable workflow.",
+			fullDescription: "Monocular motion capture (GVHMR/SMPL-X), retargeting onto Mixamo/Unreal/Rigify rigs, and Blender/OptiX GPU render — chained into a single durable workflow with human-in-the-loop rig approval. From the same footage I solved single-camera ball physics, recovering launch position to 2.4cm and velocity to 0.019 m/s, and fed exact-physics props back into the render.",
+			techStack: ["Blender/bpy", "SMPL-X", "OptiX", "Computer Vision"],
 			categories: ["ai-ml"],
-			links: [
-				{
-					text: "Case Study",
-					url: "https://academy.schoolofmarketing.co.uk/puma-india-puma-dive-campaign-innovation/"
-				}
-			],
-			featured: true
+			links: [],
+			featured: false
 		},
 		{
-			title: "Alokit.in",
-			shortDescription: "Technical team building platform for outsourcing development and running a robust hiring process.",
-			fullDescription: "In 2020, when students were loosing internship opportunities, I built this platform to connect students with professionals and engage them in an audition project - a tool that safeguards both parties using monetary investments and payouts.",
-			techStack: ["ReactJS", "Node.js", "Firebase", "Material UI"],
-			categories: ["startups", "dev-tools"],
-			links: [
-				{
-					text: "Start an audition project",
-					url: "https://alokit.in"
-				}
-			],
-			featured: true
+			title: "AWS Glue infrastructure",
+			shortDescription: "Serverless ETL at roughly a million job runs a day.",
+			fullDescription: "Infrastructure team for AWS Glue, a distributed serverless ETL service supporting close to one million job runs every day from thousands of customers worldwide.",
+			techStack: ["Java", "Distributed Systems", "AWS"],
+			categories: ["infra"],
+			links: [],
+			featured: false
 		},
 		{
-			title: "Free Time",
-			shortDescription: "Tool to help you recognize the amount of time you have in your life for things that you love.",
-			fullDescription: "This ReactNative app uses a simple premise that there are 168 hours in a week and uses simple math to bring out an impactful insight and helps its users prioritize. It then uses the in-browser PromptAPI to provide time management suggestions.",
-			techStack: ["JavaScript", "React Native", "Expo", "Recharts", "Gemini Nano"],
-			categories: ["social", "ai-ml"],
-			links: [
-				{
-					text: "Try it now!",
-					url: "https://myfreetimeinaweek.in"
-				}
-			]
+			title: "Telemetry pipelines at 10TB/day",
+			shortDescription: "Led data engineering for a real-money gaming platform.",
+			fullDescription: "Led a team of four building pipelines for 10TB+ of daily gameplay and player telemetry across TimeseriesDB, Firestore and Redis, owning GDPR compliance, access control, backups and cost optimisation.",
+			techStack: ["Python", "Firestore", "Redis", "TimeseriesDB", "GCP"],
+			categories: ["infra"],
+			links: [],
+			featured: false
 		},
 		{
-			title: "Sudoku Helper",
-			shortDescription: "A Chrome extension that helps solve Sudoku puzzles with ease.",
-			techStack: ["JavaScript", "Chrome Extensions API"],
-			categories: ["dev-tools", "games"],
-			links: [
-				{
-					text: "Install on Chrome",
-					url: "https://chromewebstore.google.com/detail/sudoku-solver/hbnnbafoijebdcdgicccgjmmhlabimgo"
-				}
-			]
-		},
-		{
-			title: "GitHub Skyline",
-			shortDescription: "A web application that visualizes your GitHub contributions over time.",
-			techStack: ["React", "GitHub API", "Three.js"],
-			categories: ["dev-tools"],
-			links: [
-				{
-					text: "Try it now!",
-					url: "https://gitskyline.vercel.app"
-				}
-			],
-			featured: true
-		},
-		{
-			title: "Typing Analyst",
-			shortDescription: "A tool that analyzes your typing speed and accuracy to help you improve.",
-			techStack: ["JavaScript", "HTML5", "CSS3"],
-			categories: ["dev-tools", "social"],
-			links: [
-				{
-					text: "Get started!",
-					url: "https://typing-analyst.vercel.app"
-				}
-			],
-			featured: true
-		},
-		{
-			title: "HustlerIDE",
-			shortDescription: "A Visual Studio Code extension that enhances your coding experience.",
-			techStack: ["TypeScript", "VS Code API"],
-			categories: ["dev-tools"],
-			links: [
-				{
-					text: "Install now!",
-					url: "https://marketplace.visualstudio.com/items?itemName=vibinex.hustler"
-				}
-			]
-		},
-		{
-			title: "Poker Bot-Arena",
-			shortDescription: "Converted a project that lets you practice Poker with friends into a project that lets you practice Poker with bots.",
-			techStack: ["Python", "AI/ML", "WebSocket"],
-			categories: ["ai-ml", "games"],
-			links: [
-				{
-					text: "Source code",
-					url: "https://github.com/avikalpg/poker-bot-arena"
-				}
-			]
-		},
-		{
-			title: "Visual guidance for 3-dof robotic arm",
-			shortDescription: "Using cameras to map collision-free paths for articulated arms, blending robotics and computer vision",
-			techStack: ["Computer Vision", "Robotics", "Python"],
-			categories: ["ai-ml"],
-			links: [
-				{
-					text: "Report",
-					url: "/archive/cs498a/FinalReport.pdf"
-				}
-			]
-		},
-		{
-			title: "Car sim in C++",
-			shortDescription: "A car simulation created using the open-GL library (intended to be a game)",
-			techStack: ["C++", "OpenGL"],
-			categories: ["games"],
-			links: [
-				{
-					text: "Download & Run",
-					url: "https://github.com/avikalpg/Graphics"
-				}
-			]
-		},
-		{
-			title: "Indian Voting Assistant",
-			shortDescription: "A personalised helper for voters in Indian Elections for only viewing information relevant to them for casting a vote.",
-			techStack: ["React", "Node.js"],
-			categories: ["social"],
-			links: [
-				{
-					text: "Source code (WIP)",
-					url: "https://github.com/avikalpg/IndianVotingAssistant"
-				}
-			]
-		},
-		{
-			title: "Course Helper",
-			shortDescription: "An Android app to guide IIT Kanpur students in selecting the right courses, tracking credits, and optimizing their academic journey",
-			techStack: ["Android", "Java"],
-			categories: ["social"],
-			links: [
-				{
-					text: "Report",
-					url: "/archive/cs654/project/helper-cs654a-project.pdf"
-				}
-			]
-		},
-		{
-			title: "Pristine: IoT garbage tracking",
-			shortDescription: "An Android app that tracks the location of lo-tech SIM-enabled plastic boxes using just the tower id sent as SMS.",
-			techStack: ["Android", "IoT", "Java"],
-			categories: ["social"],
-			links: [
-				{
-					text: "Source code",
-					url: "https://github.com/avikalpg/Pristine/"
-				}
-			]
-		},
-		{
-			title: "Games Collection",
-			shortDescription: "Open-source games: Fingersss, Othello, Two cars",
-			techStack: ["JavaScript", "HTML5 Canvas"],
-			categories: ["games"],
-			links: []
+			title: "Nebulaa grain classification",
+			shortDescription: "Computer vision for agricultural grain grading, built from scratch.",
+			fullDescription: "Co-founded Nebulaa Innovations and engineered a prototype computer-vision grain classification system end to end — data collection, labelling, model training and deployment in Python, Theano and TensorFlow.",
+			techStack: ["Python", "Theano", "TensorFlow", "Computer Vision"],
+			categories: ["ai-ml", "startups"],
+			links: [{ text: "Website", url: "https://www.nebulaa.in" }],
+			featured: false
 		}
 	]
 };

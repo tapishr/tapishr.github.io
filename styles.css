@@ -735,3 +735,123 @@
 		padding: 2rem 1rem;
 	}
 }
+/* ---------- Tapish Rathore: site-specific additions ---------- */
+
+.monogram {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 32px;
+	height: 32px;
+	border-radius: 8px;
+	background: var(--primary-gradient);
+	color: #fff;
+	font-weight: 600;
+	font-size: 0.85rem;
+	letter-spacing: 0.02em;
+	flex-shrink: 0;
+}
+
+.profile-photo.monogram-lg {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--primary-gradient);
+	color: #fff;
+	font-size: 4rem;
+	font-weight: 600;
+	letter-spacing: 0.04em;
+}
+
+/* Text-based pedigree strips (no borrowed logo art) */
+.pedigree-text {
+	padding: 48px 20px;
+	text-align: center;
+	background: var(--secondary-background);
+}
+
+.pedigree-text.alt {
+	background: #fff;
+}
+
+.pedigree-text h3 {
+	font-size: 0.8rem;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: var(--subtext-color);
+	font-weight: 500;
+	margin-bottom: 22px;
+}
+
+.pedigree-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 10px 14px;
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+.pedigree-list span {
+	padding: 8px 16px;
+	border: 1px solid var(--light-accent);
+	border-radius: 999px;
+	background: #fff;
+	color: var(--text-color);
+	font-size: 0.92rem;
+	font-weight: 500;
+}
+
+.pedigree-text.alt .pedigree-list span {
+	background: var(--secondary-background);
+}
+
+/* Showcase: link card in place of a demo GIF */
+.widget-card {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	padding: 28px;
+	border-radius: 14px;
+	background: rgba(255, 255, 255, 0.08);
+	border: 1px solid rgba(255, 255, 255, 0.22);
+	color: #fff;
+	text-decoration: none;
+	transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.widget-card:hover {
+	transform: translateY(-3px);
+	background: rgba(255, 255, 255, 0.14);
+}
+
+.widget-card i {
+	font-size: 1.9rem;
+	opacity: 0.9;
+}
+
+.widget-card strong {
+	font-size: 1.1rem;
+}
+
+.widget-card span {
+	font-size: 0.92rem;
+	opacity: 0.85;
+	line-height: 1.5;
+}
+
+.contact-direct {
+	margin-bottom: 16px;
+	color: var(--subtext-color);
+	font-size: 0.95rem;
+}
+
+.contact-direct a {
+	color: var(--accent-color);
+	font-weight: 500;
+}
+
+@media (max-width: 600px) {
+	.profile-photo.monogram-lg { font-size: 3rem; }
+	.pedigree-list span { font-size: 0.85rem; padding: 7px 13px; }
+}

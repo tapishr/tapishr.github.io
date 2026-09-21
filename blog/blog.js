@@ -1,19 +1,11 @@
 function loadCounterAPIScript(callback) {
 	var script = document.createElement('script');
-	script.src = 'https://counterapi.com/c.js';
 	script.async = true;
 	script.onload = callback;
 	document.head.appendChild(script);
 }
 
 $(document).ready(function () {
-	// Start Google Analytics
-	window.dataLayer = window.dataLayer || [];
-	function gtag() { dataLayer.push(arguments); }
-	gtag('js', new Date());
-
-	gtag('config', 'G-QPXD79N14E');
-	// End Google Analytics
 
 	var base_folder = window.location.href.substr(0, window.location.href.lastIndexOf("\/"));
 
@@ -38,7 +30,7 @@ $(document).ready(function () {
 		let fileName = categoryMap[category] + '.html';
 		$.get(base_folder + "/list_pages/" + fileName, function (htmlContent) {
 			// Restore the original page title when returning to blog list
-			document.title = window.originalPageTitle || 'Avikalp Gupta | Blog';
+			document.title = window.originalPageTitle || 'Tapish Rathore | Writing';
 
 			$("section#content").html(htmlContent);
 
@@ -89,7 +81,7 @@ $(document).ready(function () {
 				'Article';
 
 			// Update page title
-			document.title = metaNameTitle + " | Avikalp Gupta's Blog";
+			document.title = metaNameTitle + " | Tapish Rathore";
 
 			// Function to rewrite local resource paths
 			function rewriteResourcePath(originalPath) {
