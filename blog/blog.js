@@ -20,10 +20,6 @@ $(document).ready(function () {
 	function loadBlogContent(category) {
 		let categoryMap = {
 			'tech': 'tec',
-			'art': 'art',
-			'fit': 'fit',
-			'entrepreneurship': 'ent',
-			'sdg': 'sdg',
 			'all': 'all'
 		};
 
@@ -41,11 +37,6 @@ $(document).ready(function () {
 				loadArticleContent(articleUrl, category);
 			});
 
-			// Track page view for specific category
-			gtag('event', 'blog_list_view', {
-				'page_title': category + ' Blog',
-				'page_path': '/blog/' + category
-			});
 
 			// Load the counter API script
 			loadCounterAPIScript(function () {
@@ -149,11 +140,6 @@ $(document).ready(function () {
 				console.error("addCounterElements function is not defined.");
 			}
 
-			// Send page view event to Google Analytics
-			gtag('event', 'blog_article_view', {
-				'page_title': metaNameTitle,
-				'page_path': articleUrl
-			});
 
 			// Load the counter API script
 			loadCounterAPIScript(function () {
